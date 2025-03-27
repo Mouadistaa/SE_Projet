@@ -1,0 +1,38 @@
+# Durée totale de la simulation, en millisecondes
+temps-simulation=3000
+
+# Algorithme d'ordonnancement CPU (FIFO, tourniquet, par-priorités)
+processus-ordonnancement=FIFO
+
+# Quantum (pour tourniquet)
+processus-quantum=50
+
+# Intervalle d'interruption d'horloge (ms)
+interruption-horloge=10
+
+# Temps d'écriture sur disque
+temps-écriture-disque=8
+
+# Temps de chargement de page en mémoire
+temps-charge-page=5
+
+# Politique de pagination (FIF0, seconde-chance, NRU, optimal, ...)
+pagination-algorithme=seconde-chance
+
+# Politique d'allocation des cadres (globale ou locale)
+pagination-politique-allocation=globale
+
+# Nombre de cadres disponibles
+pagination-nombre-cadres=8
+
+# Nombre de cadres par processus (si locale)
+pagination-nombre-cadres-locale=3
+
+# Ordonnancement du disque (FIFO, ascenseur, plus-proche)
+disque-ordonnancement=ascenseur
+
+# Position initiale du bras
+disque-position-initiale=20
+
+# Direction initiale du bras (droite ou gauche)
+disque-direction-initiale=droite

@@ -8,6 +8,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("DÉMARRAGE DU MAIN...");
         // Vérification des arguments
         if (args.length != 2) {
             System.out.println("Usage: java -cp target/classes fr.ul.miashs.jase.Main <config-file> <data-file>");

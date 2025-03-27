@@ -11,18 +11,16 @@ public class Config {
         for (String line : Files.readAllLines(Path.of(path))) {
             line = line.strip();
             if (line.isEmpty() || line.startsWith("#")) {
-                continue; // ignorer lignes vides/commentaires
+                continue;
             }
             if (!line.contains("=")) {
-                System.err.println("Ligne invalide (pas de '=') : " + line);
+                // avertissement
                 continue;
             }
             String[] parts = line.split("=", 2);
-            if (parts.length == 2) {
-                String cle = parts[0].trim();
-                String val = parts[1].trim();
-                params.put(cle, val);
-            }
+            String cle = parts[0].trim();
+            String val = parts[1].trim();
+            params.put(cle, val);
         }
     }
 
@@ -41,4 +39,46 @@ public class Config {
     public String getOrdonnancement() {
         return params.getOrDefault("processus-ordonnancement", "FIFO");
     }
+
+    // Ajoute cette méthode :
+    public int getTempsEcritureDisque() {
+        return Integer.parseInt(params.getOrDefault("temps-écriture-disque", "8"));
+    }
+
+    // Idem pour la mémoire, si tu veux
+    public int getTempsChargePage() {
+        return Integer.parseInt(params.getOrDefault("temps-charge-page", "5"));
+    }
+
+    public int getPaginationNombreCadres() {
+        // Valeur par défaut ex: 8
+        return Integer.parseInt(params.getOrDefault("pagination-nombre-cadres", "8"));
+    }
+
+    public String getPaginationPolitiqueAllocation() {
+        // Valeur par défaut ex: "globale"
+        return params.getOrDefault("pagination-politique-allocation", "globale");
+    }
+
+    public String getPaginationAlgorithme() {
+        return params.getOrDefault("pagination-algorithme", "FIFO");
+    }
+
+    public int getPaginationNombreCadresLocale() {
+        return Integer.parseInt(params.getOrDefault("pagination-nombre-cadres-locale", "3"));
+    }
+
+    public int getDisquePositionInitiale() {
+        return Integer.parseInt(params.getOrDefault("disque-position-initiale", "0"));
+    }
+
+    public String getDisqueDirectionInitiale() {
+        return params.getOrDefault("disque-direction-initiale", "droite");
+    }
+
+    public String getDisqueOrdonnancement() {
+        return params.getOrDefault("disque-ordonnancement", "FIFO");
+    }
+
+    // etc. pour tous les champs nécessaires
 }

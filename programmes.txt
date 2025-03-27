@@ -1,0 +1,22 @@
+1/0/3/{CALCUL(15),FIN(0)}
+2/0/5/{CALCUL(10),FIN(0)}
+3/50/2/{CALCUL(10),ECRITURE(5),FIN(0)}
+
+4/0/3/{CALCUL(30),ECRITURE(12),CALCUL(50)}
+5/5/2/{CALCUL(20),LECTURE(1),CALCUL(30)}
+6/15/1/{CALCUL(10),DORMIR(40),CALCUL(20)}
+
+# Processus avec calcul pur (simple, rapide)
+7/0/3/{CALCUL(30),FIN(0)}
+
+# Processus avec lecture mémoire
+8/5/2/{CALCUL(20),LECTURE(1),CALCUL(30),FIN(0)}
+
+# Processus avec écriture disque
+9/15/4/{CALCUL(10),ECRITURE(5),CALCUL(20),FIN(0)}
+
+# Processus qui dort (attente passive)
+10/25/1/{CALCUL(5),DORMIR(50),CALCUL(5),FIN(0)}
+
+# Long processus avec tout mélangé
+11/50/5/{CALCUL(10),LECTURE(2),CALCUL(10),ECRITURE(8),DORMIR(20),CALCUL(10),FIN(0)}

@@ -22,6 +22,7 @@ public class Processus {
 
     public List<Evenement> evenements = new ArrayList<>();
 
+    public int finBlocage = 0;
     /**
      * Chargement depuis un fichier de programmes.
      * Format: ID/arrivee/priorite/{CALCUL(50),ECRITURE(10)...}

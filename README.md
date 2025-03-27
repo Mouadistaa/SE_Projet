@@ -1,2 +1,10 @@
 # SE_Projet
-Ce projet porte sur le développement d’un simulateur en langage Java (version 11) destiné à l'étude des politiques et algorithmes d'ordonnancement et de gestion des ressources des systèmes d'exploitation.
+
+Ce projet illustre un **simulateur** de gestion d’ordonnancement de processus
+(Partie I), en Java 11, avec possibilité d’extensions pour la mémoire (Partie II)
+et le disque (Partie III).
+
+## Compilation et exécution
+
+- Pour compiler : `mvn clean install`
+- Pour exécuter : 

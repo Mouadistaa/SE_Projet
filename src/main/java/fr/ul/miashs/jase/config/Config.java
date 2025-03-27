@@ -9,23 +9,36 @@ public class Config {
 
     public Config(String path) throws IOException {
         for (String line : Files.readAllLines(Path.of(path))) {
-            if (line.contains("=")) {
-                String[] parts = line.split("=");
-                params.put(parts[0].trim(), parts[1].trim());
+            line = line.strip();
+            if (line.isEmpty() || line.startsWith("#")) {
+                continue; // ignorer lignes vides/commentaires
+            }
+            if (!line.contains("=")) {
+                System.err.println("Ligne invalide (pas de '=') : " + line);
+                continue;
+            }
+            String[] parts = line.split("=", 2);
+            if (parts.length == 2) {
+                String cle = parts[0].trim();
+                String val = parts[1].trim();
+                params.put(cle, val);
             }
         }
     }
 
     public int getTempsSimulation() {
-        return Integer.parseInt(params.get("temps-simulation"));
+        return Integer.parseInt(params.getOrDefault("temps-simulation", "1000"));
     }
+
     public int getQuantum() {
         return Integer.parseInt(params.getOrDefault("processus-quantum", "100"));
     }
+
     public int getInterruptionHorloge() {
-        return Integer.parseInt(params.getOrDefault("interruption-horloge", "100"));
+        return Integer.parseInt(params.getOrDefault("interruption-horloge", "50"));
     }
+
     public String getOrdonnancement() {
-        return params.get("processus-ordonnancement");
+        return params.getOrDefault("processus-ordonnancement", "FIFO");
     }
 }

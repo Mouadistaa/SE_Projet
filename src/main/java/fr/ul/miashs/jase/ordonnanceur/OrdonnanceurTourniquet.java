@@ -20,8 +20,6 @@ public class OrdonnanceurTourniquet implements Ordonnanceur {
 
     @Override
     public Processus suivant() {
-        // Ici, on rend juste le 1er en file
-        // La gestion du quantum se fait dans Simulateur
         return file.poll();
     }
 }

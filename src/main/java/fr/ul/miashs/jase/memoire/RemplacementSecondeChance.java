@@ -26,13 +26,11 @@ public class RemplacementSecondeChance implements RemplacementStrategy {
                 int indexCadre = file.get(pointeur);
                 TablePages.Cadre c = tablePages.getCadre(indexCadre);
                 if (c.bitReference) {
-                    // Donne une seconde chance
                     c.bitReference = false;
                     pointeur++;
                 } else {
                     // On remplace ce cadre
                     charger(tablePages, indexCadre, p, numeroPage, tempsCourant);
-                    // On reste sur ce pointeur
                     remplace = true;
                 }
             }

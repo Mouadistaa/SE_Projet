@@ -6,7 +6,6 @@ import java.util.PriorityQueue;
 
 public class OrdonnanceurPriorite implements Ordonnanceur {
 
-    // Priorité la plus haute = exécution en premier
     private final PriorityQueue<Processus> file = new PriorityQueue<>(
             Comparator.comparingInt((Processus p) -> -p.priorite)
     );

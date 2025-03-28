@@ -37,7 +37,7 @@ public class GestionDisque {
     }
 
     /**
-     * Ajouter une requête d'écriture (ou lecture) sur le disque
+     * requête d'écriture (ou lecture) sur le disque
      */
     public void ajouterRequete(Processus p, int piste) {
         RequeteDisque rq = new RequeteDisque(p, piste);
@@ -64,7 +64,6 @@ public class GestionDisque {
         // Retirer la requête de la liste
         requetes.remove(rq);
 
-        // On peut imaginer un temps = distance + temps-ecriture-disque
         // Pour simplifier, on renvoie juste la distance
         return distance;
     }

@@ -17,7 +17,6 @@ public class DisqueAscenseur implements OrdonnanceurDisque {
         }
 
         // On cherche les requêtes dans la direction courante
-        // tri par distance etc.
         RequeteDisque candidate = null;
         int bestDistance = Integer.MAX_VALUE;
 
@@ -33,9 +32,7 @@ public class DisqueAscenseur implements OrdonnanceurDisque {
             }
         }
         if (candidate == null) {
-            // on change de sens
             sensDroite = !sensDroite;
-            // recommencer une fois
             return choisirRequete(requetes, positionBras, sensDroite ? "droite" : "gauche");
         }
         return candidate;

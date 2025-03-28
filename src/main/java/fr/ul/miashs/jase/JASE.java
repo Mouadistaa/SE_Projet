@@ -6,7 +6,7 @@ import fr.ul.miashs.jase.ordonnanceur.*;
 import java.io.IOException;
 import java.util.*;
 
-public class Main {
+public class JASE {
     public static void main(String[] args) {
         System.out.println("DÉMARRAGE DU MAIN...");
         // Vérification des arguments

@@ -14,7 +14,6 @@ public class Config {
                 continue;
             }
             if (!line.contains("=")) {
-                // avertissement
                 continue;
             }
             String[] parts = line.split("=", 2);
@@ -45,18 +44,15 @@ public class Config {
         return Integer.parseInt(params.getOrDefault("temps-écriture-disque", "8"));
     }
 
-    // Idem pour la mémoire, si tu veux
     public int getTempsChargePage() {
         return Integer.parseInt(params.getOrDefault("temps-charge-page", "5"));
     }
 
     public int getPaginationNombreCadres() {
-        // Valeur par défaut ex: 8
         return Integer.parseInt(params.getOrDefault("pagination-nombre-cadres", "8"));
     }
 
     public String getPaginationPolitiqueAllocation() {
-        // Valeur par défaut ex: "globale"
         return params.getOrDefault("pagination-politique-allocation", "globale");
     }
 
@@ -80,5 +76,4 @@ public class Config {
         return params.getOrDefault("disque-ordonnancement", "FIFO");
     }
 
-    // etc. pour tous les champs nécessaires
 }

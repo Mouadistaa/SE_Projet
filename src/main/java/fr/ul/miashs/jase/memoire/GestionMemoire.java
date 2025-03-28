@@ -12,7 +12,6 @@ public class GestionMemoire {
     private final RemplacementStrategy strategie;
     private final String politiqueAllocation; // "locale" ou "globale"
 
-    // On peut stocker un "TablePages global" ou un "TablePages par Processus"
     private final TablePages tablePagesGlobal; // exemple d'approche globale
 
     public GestionMemoire(Config config) {
@@ -20,7 +19,6 @@ public class GestionMemoire {
         this.tempsChargePage = config.getTempsChargePage();
         this.politiqueAllocation = config.getPaginationPolitiqueAllocation();
 
-        // Choix de la stratégie de remplacement
         String algo = config.getPaginationAlgorithme();
         switch (algo) {
             case "FIFO":
@@ -49,10 +47,9 @@ public class GestionMemoire {
      * Retourne le temps de chargement si défaut de page, sinon 0.
      */
     public int gererLecturePage(Processus p, int numeroPage, int tempsCourant) {
-        // 1) Vérifier si la page est déjà chargée
+        // Vérifier si la page est déjà chargée
         boolean enMemoire = tablePagesGlobal.estEnMemoire(p, numeroPage);
         if (enMemoire) {
-            // Pas de défaut => temps de chargement = 0
             return 0;
         } else {
             // Il faut charger la page => défaut de page
@@ -64,5 +61,4 @@ public class GestionMemoire {
         }
     }
 
-    // D'autres méthodes si besoin (gestion ECRITURE si tu veux faire un mode paginé d'écriture etc.)
 }

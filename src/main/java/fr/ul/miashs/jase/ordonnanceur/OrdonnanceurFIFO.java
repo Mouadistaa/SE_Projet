@@ -10,11 +10,13 @@ public class OrdonnanceurFIFO implements Ordonnanceur {
 
     @Override
     public void ajouter(Processus p) {
+
         file.offer(p);
     }
 
     @Override
     public Processus suivant() {
+
         return file.poll();
     }
 }

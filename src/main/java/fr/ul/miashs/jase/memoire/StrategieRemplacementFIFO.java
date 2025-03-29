@@ -7,7 +7,7 @@ import java.util.Queue;
 /**
  * Implémentation FIFO pour le remplacement de page.
  */
-public class RemplacementFIFO implements RemplacementStrategy {
+public class StrategieRemplacementFIFO implements StrategieRemplacement {
 
     private final Queue<Integer> fileFIFO = new LinkedList<>();
 

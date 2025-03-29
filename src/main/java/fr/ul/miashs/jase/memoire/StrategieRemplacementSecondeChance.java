@@ -3,7 +3,7 @@ package fr.ul.miashs.jase.memoire;
 import fr.ul.miashs.jase.model.Processus;
 import java.util.LinkedList;
 
-public class RemplacementSecondeChance implements RemplacementStrategy {
+public class StrategieRemplacementSecondeChance implements StrategieRemplacement {
 
     // On simule un "cercle" de cadres
     private final LinkedList<Integer> file = new LinkedList<>();

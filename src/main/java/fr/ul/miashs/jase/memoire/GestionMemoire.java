@@ -9,7 +9,7 @@ import fr.ul.miashs.jase.model.Processus;
 public class GestionMemoire {
     private final int nombreCadres;
     private final int tempsChargePage;
-    private final RemplacementStrategy strategie;
+    private final StrategieRemplacement strategie;
     private final String politiqueAllocation; // "locale" ou "globale"
 
     private final TablePages tablePagesGlobal; // exemple d'approche globale
@@ -22,19 +22,19 @@ public class GestionMemoire {
         String algo = config.getPaginationAlgorithme();
         switch (algo) {
             case "FIFO":
-                this.strategie = new RemplacementFIFO();
+                this.strategie = new StrategieRemplacementFIFO();
                 break;
             case "seconde-chance":
-                this.strategie = new RemplacementSecondeChance();
+                this.strategie = new StrategieRemplacementSecondeChance();
                 break;
             case "non-récemment-utilisée":
-                this.strategie = new RemplacementNRU();
+                this.strategie = new StrategieRemplacementNRU();
                 break;
             case "optimal":
-                this.strategie = new RemplacementOptimal();
+                this.strategie = new StrategieRemplacementOptimal();
                 break;
             default:
-                this.strategie = new RemplacementFIFO();
+                this.strategie = new StrategieRemplacementFIFO();
                 System.err.println("Algorithme mémoire inconnu, utilisation de FIFO par défaut.");
         }
 

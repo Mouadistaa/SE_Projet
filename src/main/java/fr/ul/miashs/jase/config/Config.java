@@ -39,7 +39,6 @@ public class Config {
         return params.getOrDefault("processus-ordonnancement", "FIFO");
     }
 
-    // Ajoute cette méthode :
     public int getTempsEcritureDisque() {
         return Integer.parseInt(params.getOrDefault("temps-écriture-disque", "8"));
     }

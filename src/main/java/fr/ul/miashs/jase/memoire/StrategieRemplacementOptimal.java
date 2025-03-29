@@ -3,7 +3,7 @@ package fr.ul.miashs.jase.memoire;
 import fr.ul.miashs.jase.model.Processus;
 
 
-public class RemplacementNRU implements RemplacementStrategy {
+public class StrategieRemplacementOptimal implements StrategieRemplacement {
 
     @Override
     public void remplacerPage(TablePages tablePages, Processus p, int numeroPage, int tempsCourant) {

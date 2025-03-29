@@ -2,7 +2,7 @@ package fr.ul.miashs.jase.memoire;
 
 import fr.ul.miashs.jase.model.Processus;
 
-public interface RemplacementStrategy {
+public interface StrategieRemplacement {
     /**
      * Choisit un cadre à remplacer dans tablePages, et y installe la page "numeroPage" du processus "p".
      */

@@ -1,7 +1,6 @@
 package fr.ul.miashs.jase.disque;
 
 import java.util.List;
-import java.util.Comparator;
 
 public class DisqueAscenseur implements OrdonnanceurDisque {
 

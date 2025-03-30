@@ -9,12 +9,7 @@ import fr.ul.miashs.jase.ordonnanceur.Ordonnanceur;
 
 import java.util.*;
 
-/**
- * Simulateur qui gère :
- *  - L'ordonnancement CPU (Partie I)
- *  - La gestion de la mémoire (Partie II)
- *  - La gestion du disque (Partie III)
- */
+
 public class Simulateur {
 
     private final Config config;

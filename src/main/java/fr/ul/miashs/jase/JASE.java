@@ -11,20 +11,19 @@ public class JASE {
         System.out.println("DÉMARRAGE DU MAIN...");
         // Vérification des arguments
         if (args.length != 2) {
-            System.out.println("Usage: java -cp target/classes fr.ul.miashs.jase.Main <config-file> <data-file>");
+            System.out.println("Il faut utiliser: java -cp target/classes fr.ul.miashs.jase.Main config.txt programmes.txt");
             return;
         }
         String configPath = args[0];
         String dataPath   = args[1];
-
         try {
-            // 1) Charger la configuration
+            // Charger la configuration
             Config config = new Config(configPath);
 
-            // 2) Charger la liste de processus
+            // Charger la liste de processus
             List<Processus> tousLesProcessus = Processus.chargerDepuisFichier(dataPath);
 
-            // 3) Choisir un ordonnanceur en fonction du paramètre
+            // Choisir un ordonnanceur en fonction du paramètre
             Ordonnanceur ordonnanceur;
             String algo = config.getOrdonnancement();
             switch (algo) {
@@ -38,10 +37,10 @@ public class JASE {
                     ordonnanceur = new OrdonnanceurPriorite();
                     break;
                 default:
-                    throw new IllegalArgumentException("Algorithme d'ordonnancement inconnu: " + algo);
+                    throw new IllegalArgumentException("Pas le bon ordonnanceur");
             }
 
-            // 4) Créer et lancer le simulateur
+            // Créer et lancer le simulateur
             Simulateur simu = new Simulateur(config, ordonnanceur, tousLesProcessus);
             simu.run();
             simu.afficherResultats();
